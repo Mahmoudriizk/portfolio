@@ -13,7 +13,7 @@ function Projects() {
                         setTimeout(() => {
                             card.style.opacity = 1;
                             card.style.transform = "translateY(0)";
-                        }, index * 200);
+                        }, index * 150);
                     });
                 }
             },
@@ -25,36 +25,40 @@ function Projects() {
 
     return (
         <section ref={ref} id="projects" style={{
-            padding: "100px 20px",
+            padding: "80px 20px",
             background: "#020617",
             color: "white"
         }}>
             <div className="container" style={{ textAlign: "center" }}>
-                <h2 style={{ fontSize: "2.5rem", marginBottom: "40px" }}>
+                
+                <h2 style={{
+                    fontSize: "clamp(2rem, 5vw, 2.5rem)",
+                    marginBottom: "50px"
+                }}>
                     My Projects
                 </h2>
 
                 <div style={{
-                    display: "grid", // 👈 بدل flex
-                    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                    gap: "20px"
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                    gap: "25px"
                 }}>
                     {[
                         {
                             title: "Electric Cars Website",
-                            desc: "A responsive website showcasing electric vehicles with modern UI and smooth user experience.",
+                            desc: "Responsive UI showcasing electric vehicles with smooth UX.",
                             github: "https://github.com/Mahmoudriizk/electric-cars-website",
                             demo: "https://mahmoudriizk.github.io/electric-cars-website/"
                         },
                         {
                             title: "School Transport System",
-                            desc: "A multi-page responsive web app for managing school transportation services and routes.",
+                            desc: "Web app for managing school transport routes and services.",
                             github: "https://github.com/Mahmoudriizk/school-bus-transport",
                             demo: "https://mahmoudriizk.github.io/school-bus-transport/"
                         },
                         {
                             title: "Medical Clinic Website",
-                            desc: "A clean and simple clinic website designed for better user experience and easy navigation.",
+                            desc: "Clean clinic UI focused on simplicity and usability.",
                             github: "https://github.com/Mahmoudriizk/Dr-Clinic-Website",
                             demo: "https://mahmoudriizk.github.io/Dr-Clinic-Website/"
                         }
@@ -64,38 +68,43 @@ function Projects() {
                             className="card"
                             style={{
                                 background: "#1e293b",
-                                padding: "20px",
-                                borderRadius: "10px",
+                                padding: "25px",
+                                borderRadius: "14px",
                                 opacity: 0,
                                 transform: "translateY(40px)",
-                                transition: "0.3s",
+                                transition: "0.4s",
                                 boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                                 cursor: "pointer"
                             }}
                             onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
-                                e.currentTarget.style.boxShadow = "0 15px 35px rgba(59,130,246,0.3)";
+                                e.currentTarget.style.transform = "translateY(-8px)";
+                                e.currentTarget.style.boxShadow = "0 15px 35px rgba(59,130,246,0.25)";
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = "translateY(0)";
                                 e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.5)";
                             }}
                         >
-                            <h3>{project.title}</h3>
+                            <h3 style={{
+                                fontSize: "18px",
+                                marginBottom: "10px"
+                            }}>
+                                {project.title}
+                            </h3>
 
                             <p style={{
                                 color: "#94a3b8",
-                                marginTop: "10px",
                                 fontSize: "14px",
-                                lineHeight: "1.5"
+                                lineHeight: "1.6",
+                                marginBottom: "20px"
                             }}>
                                 {project.desc}
                             </p>
 
                             <div style={{
-                                marginTop: "15px",
                                 display: "flex",
-                                justifyContent: "center"
+                                justifyContent: "center",
+                                gap: "10px"
                             }}>
                                 <a href={project.github} target="_blank" rel="noreferrer">
                                     <button style={btn}>GitHub</button>
@@ -114,8 +123,7 @@ function Projects() {
 }
 
 const btn = {
-    marginRight: "12px",
-    padding: "6px 12px",
+    padding: "7px 14px",
     background: "#3b82f6",
     border: "none",
     borderRadius: "6px",
@@ -125,7 +133,7 @@ const btn = {
 };
 
 const btnOutline = {
-    padding: "6px 12px",
+    padding: "7px 14px",
     background: "transparent",
     border: "1px solid white",
     borderRadius: "6px",
