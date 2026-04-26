@@ -15,7 +15,7 @@ function Hero() {
                 justifyContent: "space-between",
                 flexWrap: "wrap",
                 gap: "40px",
-                padding: "80px 0",
+                padding: "80px 20px"
             }}>
 
                 {/* LEFT TEXT */}
@@ -26,7 +26,7 @@ function Hero() {
                 }}>
 
                     <h1 style={{
-                        fontSize: "3rem",
+                        fontSize: "clamp(2rem, 5vw, 3rem)", // 🔥 responsive
                         fontWeight: "bold",
                         lineHeight: "1.2"
                     }}>
@@ -97,17 +97,17 @@ function Hero() {
                 {/* RIGHT IMAGE */}
                 <div style={{
                     flex: 1,
-                    textAlign: "center",
-                    minWidth: "280px"
+                    minWidth: "280px",
+                    display: "flex",
+                    justifyContent: "center"
                 }}>
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
                         alt="developer"
                         style={{
-                            width: "220px", // 👈 أصغر للموبايل
+                            width: "clamp(180px, 40vw, 260px)", // 🔥 responsive
                             borderRadius: "20px",
-                            boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
-                            animation: "float 3s ease-in-out infinite"
+                            boxShadow: "0 20px 40px rgba(0,0,0,0.5)"
                         }}
                     />
                 </div>
