@@ -24,25 +24,33 @@ function Projects() {
     }, []);
 
     return (
-        <section ref={ref} id="projects" style={{
-            padding: "80px 20px",
-            background: "#020617",
-            color: "white"
-        }}>
+        <section
+            ref={ref}
+            id="projects"
+            style={{
+                padding: "80px 20px",
+                background: "#020617",
+                color: "white"
+            }}
+        >
             <div className="container" style={{ textAlign: "center" }}>
-                
-                <h2 style={{
-                    fontSize: "clamp(2rem, 5vw, 2.5rem)",
-                    marginBottom: "50px"
-                }}>
+
+                <h2
+                    style={{
+                        fontSize: "clamp(2rem, 5vw, 2.5rem)",
+                        marginBottom: "50px"
+                    }}
+                >
                     My Projects
                 </h2>
 
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                    gap: "25px"
-                }}>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                        gap: "25px"
+                    }}
+                >
                     {[
                         {
                             title: "Electric Cars Website",
@@ -70,42 +78,51 @@ function Projects() {
                                 background: "#1e293b",
                                 padding: "25px",
                                 borderRadius: "14px",
+                                maxWidth: "320px",
+                                margin: "0 auto",
                                 opacity: 0,
                                 transform: "translateY(40px)",
                                 transition: "0.4s",
-                                boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+                                boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
                                 cursor: "pointer"
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.transform = "translateY(-8px)";
-                                e.currentTarget.style.boxShadow = "0 15px 35px rgba(59,130,246,0.25)";
+                                e.currentTarget.style.boxShadow = "0 15px 30px rgba(59,130,246,0.25)";
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = "translateY(0)";
-                                e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.5)";
+                                e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.3)";
                             }}
                         >
-                            <h3 style={{
-                                fontSize: "18px",
-                                marginBottom: "10px"
-                            }}>
+                            <h3
+                                style={{
+                                    fontSize: "17px",
+                                    lineHeight: "1.4",
+                                    marginBottom: "10px"
+                                }}
+                            >
                                 {project.title}
                             </h3>
 
-                            <p style={{
-                                color: "#94a3b8",
-                                fontSize: "14px",
-                                lineHeight: "1.6",
-                                marginBottom: "20px"
-                            }}>
+                            <p
+                                style={{
+                                    color: "#94a3b8",
+                                    fontSize: "14px",
+                                    lineHeight: "1.6",
+                                    marginBottom: "20px"
+                                }}
+                            >
                                 {project.desc}
                             </p>
 
-                            <div style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                gap: "10px"
-                            }}>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    gap: "10px"
+                                }}
+                            >
                                 <a href={project.github} target="_blank" rel="noreferrer">
                                     <button style={btn}>GitHub</button>
                                 </a>
@@ -123,7 +140,7 @@ function Projects() {
 }
 
 const btn = {
-    padding: "7px 14px",
+    padding: "6px 14px",
     background: "#3b82f6",
     border: "none",
     borderRadius: "6px",
@@ -133,7 +150,7 @@ const btn = {
 };
 
 const btnOutline = {
-    padding: "7px 14px",
+    padding: "6px 14px",
     background: "transparent",
     border: "1px solid white",
     borderRadius: "6px",
