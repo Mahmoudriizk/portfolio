@@ -16,7 +16,6 @@ function Hero() {
                 flexWrap: "wrap",
                 gap: "40px",
                 padding: "80px 0",
-                paddingLeft: "150px"
             }}>
 
                 {/* LEFT TEXT */}
